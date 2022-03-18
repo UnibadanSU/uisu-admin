@@ -46,8 +46,9 @@ INSTALLED_APPS = [
 
     'cloudinary',
     'cloudinary_storage',
-
+    
     'rest_framework',
+    'graphene_django',
 ]
 
 MIDDLEWARE = [
@@ -166,3 +167,9 @@ STATIC_ROOT = BASE_DIR / 'static'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# GRAPHENE SCHEMA PATH
+
+GRAPHENE = {    
+    'SCHEMA': 'news.schema.schema',
+}

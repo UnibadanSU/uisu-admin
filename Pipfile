@@ -13,6 +13,7 @@ pillow = "*"
 cloudinary = "*"
 django-cloudinary-storage = "*"
 djangorestframework = "*"
+graphene-django = "*"
 
 [dev-packages]
 
