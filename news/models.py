@@ -10,7 +10,7 @@ class Profile(models.Model):
         settings.AUTH_USER_MODEL,
         on_delete=models.PROTECT,
     )
-    position = models.TextField(blank=True, max_length=30)
+    position = models.CharField(blank=True, max_length=30)
     bio = models.CharField(max_length=240, blank=True)
 
     def __str__(self):
