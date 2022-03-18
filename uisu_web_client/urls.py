@@ -19,6 +19,22 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 
+from django.conf.urls.static import static
+from django.contrib import admin
+from django.urls import include, path
+from news import schema, views
+from rest_framework import routers
+
+router = routers.DefaultRouter()
+router.register(r'articles', views.ArticleView)
+router.register(r'profiles', views.ProfileView)
+router.register(r'tags', views.TagView)
+router.register(r'executives', views.ExecutiveView)
+router.register(r'representatives', views.RepresentativeView)
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/', include(router.urls)),
+
 ] + static(settings.MEDIA_URL, docuemnt_root = settings.MEDIA_ROOT)
+
